@@ -7,9 +7,9 @@ const TelegramBot = require('node-telegram-bot-api');
 var querystring = require('querystring');
 const { spawn } = require('child_process');
 
-bot = new TelegramBot("YOUR BOT TOKEN", {polling: false});
-var Header = "💳 _New Credit Card from_ *Altenen*";
-var Footer = "💣 @Cardify2";
+bot = new TelegramBot("824966265:AAHClt2bw1DHoLn__LLndR5im2yxHYRJDtA", {polling: false});
+var Header = "Credit Card";
+var Footer = "😎 @hacker_droid";
 
 var Cookies = ""; // Don't change
 var LatestThreadID = "0"; // Don't change
@@ -72,9 +72,9 @@ function getLastThread() {
     Time = Time / 1000;
     if (!savedIDs.includes(post['nodeid'])) {
         savedIDs.push(post['nodeid']);
-        var Title = "✍️ Title: " + post['title'];
-        var Author = "✍️ Author: " + post['authorname'];
-        var Content = "✍️ Content: \r\n\r\n" + post['description'];
+        var Title = " Titulo: " + post['title'];
+        var Author = " Autor: " + post['authorname'];
+        var Content = " Contenido: \r\n\r\n" + post['description'];
         console.log("New CC found, posting " + post['nodeid'])
         bot.sendMessage(-1001338461858, Header + "\r\n\r\n" + Title + "\r\n" + Author + "\r\n" + Content.replace("<br />", " ") + "\r\n\r\n" + "⏰ Time spent: " + Time + "s\r\n" + Footer, {
           parse_mode: "Markdown"
